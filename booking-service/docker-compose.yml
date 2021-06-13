@@ -1,0 +1,20 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 8002:8002
+    volumes:
+      - ./:/code
+    
+  mongo:
+    image: mongo
+    command: mongod --port 27021
+    ports:
+      - 27021:27021
+    volumes:
+      - mongodb-ticket:/data/db
+    
+volumes:
+ mongodb-ticket:

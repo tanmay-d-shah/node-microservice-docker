@@ -1,0 +1,20 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/code
+    
+  mongo:
+    image: mongo
+    command: mongod --port 27019
+    ports:
+      - 27019:27019
+    volumes:
+      - mongodb-movie:/data/db
+    
+volumes:
+ mongodb-movie:

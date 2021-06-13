@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style type="text/css">
+     table, td, th {  
+     border: 1px solid #ddd;
+     text-align: left;
+   }
+   
+   table {
+     border-collapse: collapse;
+     width: 50%;
+    
+   }
+   .table-data{
+       position: relative;
+     left:50px;
+     top:50px;
+   }
+   th, td {
+     padding: 15px;
+   }
+ </style>
+</head>
+<body>
+<!--====form section start====-->
+    <div class="table-data">
+    <table border ="1" >
+        <tr>
+            <th>S.N</th>
+            <th>Movie Name</th>
+            <th>Language</th>
+            <th>Duration</th>
+            <th>ReleaseDate</th>
+            <th>Edit</th>
+            
+        </tr>
+        
+        <%
+        if(movieData.length!=0){
+        var i=1;
+        
+        movieData.forEach(function(data){
+         
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.name %></td>
+            <td><%=data.language %></td>
+            <td><%=data.duration %></td>
+            <td><%=data.releaseDate %></td>
+            <td><a href="/book/<%=data._id%> ">Edit</a></td>
+          
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7"> Data Not Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>

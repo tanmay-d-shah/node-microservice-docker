@@ -1,0 +1,18 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 8001:8001
+    volumes:
+      - ./:/code
+  mongo:
+    image: mongo
+    command: mongod --port 27020
+    ports:
+      - 27020:27020
+    volumes:
+      - mongodb-user:/data/db
+volumes:
+ mongodb-user:
