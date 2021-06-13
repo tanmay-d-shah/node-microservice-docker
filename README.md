@@ -1,6 +1,6 @@
 # node-microservice-docker
 A dockerized node.js cinema ticket booking app based on micro-service architecture <br>
-
+Database Used is : MongoDB <br>
 Steps to Run : <br>
 1. run  ``` 'docker-compose up -d --build'   ``` on each service directories
 2. run ``` npm install ``` on main folder directory
